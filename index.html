@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="sunny">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frontend Developer Skills Checklist for Getting a Job</title>
+<meta name="description" content="An interactive front end developer skills checklist. Tick off HTML, CSS, JavaScript, React, Figma and interview skills, and watch your job ready meter fill up.">
+<meta name="theme-color" content="#E34F26">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E34F26'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='monospace' font-weight='bold' fill='white'>&lt;/&gt;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--html:#E34F26;--css:#1572B6;--js:#F7DF1E;--ink:#14172e;--r:20px}
+[data-theme=sunny]{--bg:#fff8ec;--surface:#ffffff;--text:#14172e;--muted:#4d5270;--line:#14172e;--shadow:6px 6px 0 var(--ink);--accent:var(--html);--on-accent:#fff}
+[data-theme=night]{--bg:#0d1020;--surface:#171b34;--text:#eef0ff;--muted:#a6abd0;--line:#2c3260;--shadow:0 0 0 1px #2c3260,0 14px 40px rgba(21,114,182,.25);--accent:var(--js);--on-accent:#14172e}
+[data-theme=blueprint]{--bg:#1572B6;--surface:#f4faff;--text:#0d2a45;--muted:#33577a;--line:#0d2a45;--shadow:5px 5px 0 var(--js);--accent:var(--html);--on-accent:#fff}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Figtree,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:17px;transition:background .3s,color .3s}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+section h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:34px}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:2px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 22px;max-width:1120px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:'Bricolage Grotesque';font-weight:800;font-size:1.15rem}
+.logo i{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--html);color:#fff;font-style:normal;font-size:.95rem;border:2px solid var(--line)}
+nav{display:flex;gap:20px;font-weight:600;font-size:.95rem}
+nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--accent)}
+.themes{display:flex;gap:6px;background:var(--surface);padding:4px;border:2px solid var(--line);border-radius:999px}
+.themes button{border:0;background:none;color:var(--text);font:600 .82rem Figtree;padding:6px 12px;border-radius:999px;cursor:pointer}
+.themes button[aria-pressed=true]{background:var(--accent);color:var(--on-accent)}
+
+/* hero */
+.hero{padding:64px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+h1{font-size:clamp(2.5rem,6.2vw,4.7rem);font-weight:800}
+h1 .tag{display:inline-block;padding:0 .18em;border-radius:.2em;color:#fff;transform:rotate(-2deg)}
+.t1{background:var(--html)}.t2{background:var(--css)}.t3{background:var(--js);color:#14172e!important}
+.hero p{margin:22px 0 28px;color:var(--muted);font-size:1.12rem;max-width:52ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:14px;border:2px solid var(--line);background:var(--accent);color:var(--on-accent);box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px)}
+.btn.alt{background:var(--surface);color:var(--text)}
+
+/* browser window with live meter */
+.win{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.win-top{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:2px solid var(--line)}
+.win-top span{width:12px;height:12px;border-radius:50%}
+.win-top span:nth-child(1){background:var(--html)}.win-top span:nth-child(2){background:var(--js)}.win-top span:nth-child(3){background:var(--css)}
+.win-top em{margin-left:10px;font-style:normal;font-size:.8rem;color:var(--muted);background:var(--bg);padding:3px 12px;border-radius:99px;flex:1;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.win-body{padding:26px}
+.score{font-family:'Bricolage Grotesque';font-weight:800;font-size:4.2rem;line-height:1}
+.score small{font-size:1.4rem;color:var(--muted)}
+.meter{height:18px;border:2px solid var(--line);border-radius:99px;margin:16px 0 12px;overflow:hidden;background:var(--bg)}
+.meter div{height:100%;width:0;background:linear-gradient(90deg,var(--html),var(--js),var(--css));transition:width .5s cubic-bezier(.3,1.4,.5,1)}
+#msg{font-weight:600;min-height:3.4em}
+.code{margin-top:14px;font:500 .85rem ui-monospace,Menlo,monospace;background:var(--ink);color:#d8dcff;padding:14px;border-radius:12px;overflow-x:auto;white-space:pre}
+.code b{color:var(--js)}.code u{text-decoration:none;color:#ff9a7a}
+
+/* checklist */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.chip{font:600 .9rem Figtree;padding:8px 16px;border-radius:99px;border:2px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);color:var(--on-accent)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.card{background:var(--surface);border:2px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:var(--shadow);position:relative}
+.card[hidden]{display:none}
+.card h3{font-size:1.35rem;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.dot{width:14px;height:14px;border-radius:4px;flex:none}
+.card>p{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.card label{display:flex;gap:10px;align-items:flex-start;padding:7px 0;cursor:pointer;font-size:.97rem}
+.card input{appearance:none;flex:none;width:22px;height:22px;margin-top:2px;border:2px solid var(--line);border-radius:7px;background:var(--bg);cursor:pointer;display:grid;place-items:center}
+.card input:checked{background:var(--accent);border-color:var(--line)}
+.card input:checked::after{content:"";width:6px;height:11px;border:solid var(--on-accent);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.card input:checked+span{text-decoration:line-through;text-decoration-thickness:2px;opacity:.6}
+.card .count{position:absolute;top:20px;right:20px;font-weight:700;font-size:.85rem;color:var(--muted)}
+.reset{margin-top:26px;background:none;border:0;color:var(--muted);font:600 .95rem Figtree;text-decoration:underline;cursor:pointer}
+
+/* paths */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+.list{display:grid;gap:14px}
+.link{display:block;text-decoration:none;background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:18px 20px;transition:transform .15s,box-shadow .15s}
+.link:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow)}
+.link strong{display:block;font-family:'Bricolage Grotesque';font-size:1.12rem}
+.link span{color:var(--muted);font-size:.93rem}
+.split h3{font-size:1.5rem;margin-bottom:16px}
+
+/* cta band */
+.band{background:var(--ink);color:#fff;border-radius:28px;padding:48px 34px;text-align:center;border:2px solid var(--line);position:relative;overflow:hidden}
+.band::before{content:"</>";position:absolute;right:-10px;top:-30px;font:800 9rem 'Bricolage Grotesque';color:rgba(255,255,255,.06)}
+.band h2{max-width:20ch;margin:0 auto 12px}
+.band p{color:#c3c8ef;max-width:52ch;margin:0 auto 24px}
+.band .btn{background:var(--js);color:#14172e;border-color:#fff;box-shadow:5px 5px 0 var(--html)}
+
+footer{border-top:2px solid var(--line);padding:40px 0 50px;margin-top:30px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;font-size:.95rem}
+.foot h4{font-family:'Bricolage Grotesque';margin-bottom:10px;font-size:1.05rem}
+.foot a{display:block;color:var(--muted);text-decoration:none;padding:3px 0}
+.foot a:hover{color:var(--text);text-decoration:underline}
+.copy{margin-top:30px;color:var(--muted);font-size:.85rem}
+
+.pop{position:fixed;left:50%;bottom:26px;transform:translate(-50%,120px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:99px;font-weight:600;border:2px solid var(--js);transition:transform .35s;z-index:30;max-width:90vw}
+.pop.show{transform:translate(-50%,0)}
+
+@media(max-width:860px){.hero-grid,.split,.foot{grid-template-columns:1fr}nav{display:none}section{padding:52px 0}}
+@media(max-width:520px){.themes button{padding:6px 9px;font-size:.76rem}.logo span{display:none}.score{font-size:3.3rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="logo" href="#top" aria-label="Frontend skills checklist home"><i>&lt;/&gt;</i><span>Skills Checklist</span></a>
+    <nav aria-label="Primary">
+      <a href="#checklist">Checklist</a>
+      <a href="#paths">Learn more</a>
+      <a href="#start">Get started</a>
+    </nav>
+    <div class="themes" role="group" aria-label="Choose a look">
+      <button data-t="sunny" aria-pressed="true">Sunny</button>
+      <button data-t="night" aria-pressed="false">Night</button>
+      <button data-t="blueprint" aria-pressed="false">Blueprint</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap hero">
+  <div class="hero-grid">
+    <div>
+      <h1>Your front end job search needs a <span class="tag t1">checklist</span>, not <span class="tag t2">more</span> <span class="tag t3">tabs</span>.</h1>
+      <p>Job listings ask for everything at once. This page narrows it to the skills that actually decide interviews. Tick what you already know, and see how close you are to job ready.</p>
+      <div class="btns">
+        <a class="btn" href="#checklist">Start ticking</a>
+        <a class="btn alt" href="https://www.justacademy.co/blog-detail/frontend-developer-skills-checklist-for-getting-a-job" target="_blank" rel="noopener">Read the full guide</a>
+      </div>
+    </div>
+    <div class="win" aria-live="polite">
+      <div class="win-top"><span></span><span></span><span></span><em>localhost:3000/job-ready</em></div>
+      <div class="win-body">
+        <div class="score"><span id="pct">0</span><small>% job ready</small></div>
+        <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar"><div id="fill"></div></div>
+        <p id="msg">Nothing ticked yet. Every developer starts here, so pick one box.</p>
+        <div class="code" id="code"><b>const</b> skills = [];
+<b>if</b> (skills.length &gt; 0) <u>apply()</u>;</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="checklist">
+  <div class="wrap">
+    <h2>The checklist, honestly trimmed</h2>
+    <p class="lead">Be strict with yourself. A box only counts if you could build something small with that skill from a blank file and explain your choices out loud.</p>
+    <div class="chips" role="group" aria-label="Filter skills">
+      <button class="chip" data-f="all" aria-pressed="true">Everything</button>
+      <button class="chip" data-f="core" aria-pressed="false">Core languages</button>
+      <button class="chip" data-f="build" aria-pressed="false">Frameworks and design</button>
+      <button class="chip" data-f="career" aria-pressed="false">Tools and career</button>
+    </div>
+    <div class="cards" id="cards"></div>
+    <button class="reset" id="reset">Clear all ticks</button>
+  </div>
+</section>
+
+<section id="paths">
+  <div class="wrap split">
+    <div>
+      <h3>Courses to go deeper</h3>
+      <div class="list">
+        <a class="link" href="https://www.justacademy.co/job-bootcamp-detail/delhi/frontend-development-course-in-delhi-live-online-ui-interactive-web-design-training" target="_blank" rel="noopener"><strong>Front end development course, live online</strong><span>UI, interactive web design and mentor reviews for Delhi learners.</span></a>
+        <a class="link" href="https://www.justacademy.co/job-bootcamp-detail/delhi/mern-stack-developer-course-in-delhi-live-online-react-full-stack-product-development-training" target="_blank" rel="noopener"><strong>MERN stack developer course, live online</strong><span>Take React into Node, Express and MongoDB with product style projects.</span></a>
+        <a class="link" href="https://www.justacademy.co/course-detail/delhi/javascript-training-in-delhi" target="_blank" rel="noopener"><strong>JavaScript training in Delhi</strong><span>Closures, async code, the DOM and everything interviews love to ask.</span></a>
+        <a class="link" href="https://www.justacademy.co/course-detail/delhi/figma-training-in-delhi" target="_blank" rel="noopener"><strong>Figma training in Delhi</strong><span>Read design files like a developer and make handoffs painless.</span></a>
+        <a class="link" href="https://www.justacademy.co/course-detail/pune/selenium-training-in-pune" target="_blank" rel="noopener"><strong>Selenium training in Pune</strong><span>See how testers check your interfaces, and write sturdier code because of it.</span></a>
+      </div>
+    </div>
+    <div>
+      <h3>Reads worth your coffee</h3>
+      <div class="list">
+        <a class="link" href="https://www.justacademy.co/blog-detail/frontend-developer-skills-checklist-for-getting-a-job" target="_blank" rel="noopener"><strong>Frontend developer skills checklist for getting a job</strong><span>The long form version of this page, with resume and interview tips.</span></a>
+        <a class="link" href="https://www.justacademy.co/blog-detail/javascript-es6-features-every-developer-must-know" target="_blank" rel="noopener"><strong>JavaScript ES6 features every developer must know</strong><span>Close the syntax gaps before your next technical round.</span></a>
+        <a class="link" href="https://www.justacademy.co/blog-detail/uiux-designer-career-roadmap-using-figma-in-2026" target="_blank" rel="noopener"><strong>UI UX designer career roadmap using Figma in 2026</strong><span>Understand the design side of the handoff.</span></a>
+        <a class="link" href="https://www.justacademy.co/blog-detail/mern-stack-developer-skills-companies-look-for-in-2026" target="_blank" rel="noopener"><strong>MERN stack developer skills companies look for in 2026</strong><span>Thinking of going full stack? Start here.</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <div class="band">
+      <h2>Ready to turn those ticks into a portfolio?</h2>
+      <p>Learn with live, instructor led classes, get your code reviewed by a mentor, and build projects that look good on a resume.</p>
+      <a class="btn" href="https://www.justacademy.co/job-bootcamp-detail/delhi/frontend-development-course-in-delhi-live-online-ui-interactive-web-design-training" target="_blank" rel="noopener">Explore the front end course</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top" style="display:flex;color:var(--text)"><i>&lt;/&gt;</i><span>Skills Checklist</span></a>
+        <p style="color:var(--muted);margin-top:12px;max-width:34ch">A small, honest guide to the front end skills that get people hired.</p>
+      </div>
+      <div>
+        <h4>Courses</h4>
+        <a href="https://www.justacademy.co/job-bootcamp-detail/delhi/frontend-development-course-in-delhi-live-online-ui-interactive-web-design-training" target="_blank" rel="noopener">Front end development</a>
+        <a href="https://www.justacademy.co/job-bootcamp-detail/delhi/mern-stack-developer-course-in-delhi-live-online-react-full-stack-product-development-training" target="_blank" rel="noopener">MERN stack</a>
+        <a href="https://www.justacademy.co/course-detail/delhi/javascript-training-in-delhi" target="_blank" rel="noopener">JavaScript</a>
+        <a href="https://www.justacademy.co/course-detail/delhi/figma-training-in-delhi" target="_blank" rel="noopener">Figma</a>
+        <a href="https://www.justacademy.co/course-detail/pune/selenium-training-in-pune" target="_blank" rel="noopener">Selenium</a>
+      </div>
+      <div>
+        <h4>Blogs</h4>
+        <a href="https://www.justacademy.co/blog-detail/frontend-developer-skills-checklist-for-getting-a-job" target="_blank" rel="noopener">Skills checklist</a>
+        <a href="https://www.justacademy.co/blog-detail/javascript-es6-features-every-developer-must-know" target="_blank" rel="noopener">JavaScript ES6</a>
+        <a href="https://www.justacademy.co/blog-detail/uiux-designer-career-roadmap-using-figma-in-2026" target="_blank" rel="noopener">UI UX roadmap</a>
+        <a href="https://www.justacademy.co/blog-detail/mern-stack-developer-skills-companies-look-for-in-2026" target="_blank" rel="noopener">MERN skills</a>
+      </div>
+    </div>
+    <p class="copy">Built with HTML, CSS and a little JavaScript. Your ticks are saved only in your own browser.</p>
+  </div>
+</footer>
+<div class="pop" id="pop" role="status"></div>
+
+<script>
+const GROUPS=[
+{t:"HTML and CSS",c:"core",col:"var(--html)",d:"The layer everyone claims and few use well.",s:["Write semantic HTML with proper headings and labelled forms","Lay out pages with Flexbox and Grid","Build mobile first, responsive pages","Explain specificity and the cascade"]},
+{t:"JavaScript",c:"core",col:"var(--js)",d:"Where interviews are won or lost.",s:["Explain closures, scope and the this keyword","Use map, filter, reduce and destructuring","Write async code with promises and fetch","Handle DOM events and event delegation"]},
+{t:"Frameworks",c:"build",col:"var(--css)",d:"Pick one, go deep, skip the hopping.",s:["Build React components with props, state and hooks","Fetch and display API data with loading and error states","Share state with context and structure folders sensibly","Know what changes in Angular or Vue"]},
+{t:"Design sense",c:"build",col:"var(--html)",d:"Build what the designer meant.",s:["Inspect spacing, colour and type in Figma","Match auto layout to flex and grid","Keep contrast, focus states and alt text accessible","Rebuild one real site section from scratch"]},
+{t:"Tools and testing",c:"career",col:"var(--css)",d:"The unglamorous skills that make you easy to hire.",s:["Branch, commit, push and open a pull request in Git","Debug with breakpoints and the network tab","Write a unit test with Jest and Testing Library","Read basic Core Web Vitals and fix a slow image"]},
+{t:"Resume and interviews",c:"career",col:"var(--js)",d:"Show the skills, then talk through them.",s:["List technical skills by category on a one page resume","Describe two projects with tools and results","Deploy a portfolio with live demos and source links","Build a small component aloud under a time limit"]}];
+const KEY="fe-checklist-v1",saved=JSON.parse(localStorage.getItem(KEY)||"[]");
+const cards=document.getElementById("cards");let n=0;
+GROUPS.forEach((g,gi)=>{
+ const el=document.createElement("article");el.className="card";el.dataset.c=g.c;
+ el.innerHTML=`<span class="count"></span><h3><span class="dot" style="background:${g.col}"></span>${g.t}</h3><p>${g.d}</p>`+
+ g.s.map((x,i)=>{const id=gi+"-"+i;n++;return `<label><input type="checkbox" id="${id}" ${saved.includes(id)?"checked":""}><span>${x}</span></label>`}).join("");
+ cards.appendChild(el)});
+const boxes=[...cards.querySelectorAll("input")];
+const msgs=[[0,"Nothing ticked yet. Every developer starts here, so pick one box."],[20,"Good start. Foundations first, frameworks later."],[45,"Solid base. Now build one small project with each tick."],[70,"You are close. Work on your resume and a mock interview."],[100,"Fully ticked. Deploy your portfolio and start applying."]];
+let last=0;
+function update(){
+ const done=boxes.filter(b=>b.checked),p=Math.round(done.length/n*100);
+ pct.textContent=p;fill.style.width=p+"%";bar.setAttribute("aria-valuenow",p);
+ msg.textContent=[...msgs].reverse().find(m=>p>=m[0])[1];
+ code.innerHTML=`<b>const</b> skills = [${done.length}];\n<b>if</b> (skills.length &gt; 0) <u>apply()</u>;`+(p==100?`\n// <b>ready to ship</b>`:"");
+ cards.querySelectorAll(".card").forEach(c=>{const a=c.querySelectorAll("input");c.querySelector(".count").textContent=[...a].filter(i=>i.checked).length+" of "+a.length});
+ localStorage.setItem(KEY,JSON.stringify(done.map(b=>b.id)));
+ if(p==100&&last<100)toast("All skills ticked. Go build something great.");
+ else if(p>=50&&last<50)toast("Halfway there. Keep the streak going.");
+ last=p}
+function toast(t){pop.textContent=t;pop.classList.add("show");setTimeout(()=>pop.classList.remove("show"),2600)}
+boxes.forEach(b=>b.addEventListener("change",update));
+reset.onclick=()=>{boxes.forEach(b=>b.checked=false);last=0;update()};
+document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+ document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));
+ cards.querySelectorAll(".card").forEach(c=>c.hidden=!(b.dataset.f=="all"||c.dataset.c==b.dataset.f))});
+function setTheme(t){document.documentElement.dataset.theme=t;document.querySelectorAll(".themes button").forEach(x=>x.setAttribute("aria-pressed",x.dataset.t===t));try{localStorage.setItem("fe-theme",t)}catch(e){}}
+document.querySelectorAll(".themes button").forEach(b=>b.onclick=()=>setTheme(b.dataset.t));
+setTheme(localStorage.getItem("fe-theme")||"sunny");
+update();
+</script>
+</body>
+</html>
